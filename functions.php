@@ -14,6 +14,7 @@ $db = new DBController();
 
 // Product object
 $product = new Product($db);
+$product_suffle = $product->getData();
 
 // Cart Object
 $Cart = new Cart($db);
