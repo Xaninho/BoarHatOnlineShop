@@ -2,6 +2,7 @@
 
 <?php
   $product_suffle = $product->getData();
+  shuffle($product_suffle);
 ?>
 
 <section id="top-sale">
