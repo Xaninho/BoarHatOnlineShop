@@ -3,6 +3,10 @@
 
 <head>
 
+    <?php
+        ob_start();
+    ?>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device=width, initial-scale=1.0">
     <title>Boar Hat</title>
@@ -43,6 +47,8 @@
         <?php
 
         include('./components/_shopping-cart.php');
+
+        include('./components/_wishlist-template.php');
 
         include('./components/_top-sale.php');
 
