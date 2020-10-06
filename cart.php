@@ -46,9 +46,13 @@
 
         <?php
 
-        include('./components/_shopping-cart.php');
+        /*  include cart items if it is not empty */
+        count($product->getData('cart')) ? include ('components/_shopping-cart.php') :  include ('components/notFound/_cart-notFound.php');
+        /*  include cart items if it is not empty */
 
-        include('./components/_wishlist-template.php');
+        /*  include top sale section */
+        count($product->getData('wishlist')) ? include ('components/_wishlist-template.php') :  include ('components/notFound/_wishlist-notFound.php');
+        /*  include top sale section */
 
         include('./components/_top-sale.php');
 
