@@ -1,9 +1,25 @@
 <!-- PRODUCT -->
 
 <?php
+
+   /* if(isset($_GET['item_id']) && !empty($_GET[''])){
+        echo "App = ".$_GET['app'];
+    } else {
+        echo "App is empty";
+    }*/
+
     $item_id = $_GET['item_id'];
+
     foreach($product->getData() as $item) :
         if ($item['item_id'] == $item_id) :
+            
+            // request method post
+          
+                if (isset($_POST['product_submit'])) {
+                $Cart->addToCartFromProduct($_POST['user_id'], $_POST['item_id']);
+                }
+           
+  
 ?>
 
 <section id="product" class="py-3">
@@ -13,18 +29,22 @@
         <div class="col-sm-6">
             <img src="<?php echo $item['item_image']; ?>" alt="product" class="img-fluid">
             <div class="form-row pt-4 font-size-16 font-baloo">
-                <div class="col">
-                    <button type="submit" class="btn btn-danger form-control">Proceed to Buy</button>
-                </div>
-                <div class="col">
-                <?php
-                  if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [] )) {
-                    echo '<button type="submit" disabled class="btn btn-success font-size-16 form-control">In the Cart</button>';
-                  } else {
-                    echo '<button type="submit" name="top_sale_submit" class="btn btn-warning font-size-16 form-control">Add to Cart</button>';
-                  }
-                  ?>
-                </div>
+                <form method="post">
+                    <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
+                    <input type="hidden" name="user_id" value="<?php echo 1; ?>">
+                    <div class="col">
+                        <button type="submit" class="btn btn-danger form-control">Proceed to Buy</button>
+                    </div>
+                    <div class="col">
+                    <?php
+                    if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [] )) {
+                        echo '<button type="submit" disabled class="btn btn-success font-size-16 form-control">In the Cart</button>';
+                    } else {
+                        echo '<button type="submit" name="product_submit" class="btn btn-warning font-size-16 form-control">Add to Cart</button>';
+                    }
+                    ?>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="col-sm-6 py-5">
