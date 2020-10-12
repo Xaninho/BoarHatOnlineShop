@@ -1,7 +1,7 @@
 <!-- SPECIAL PRICE -->
 <?php
-  $brand = array_map(function ($pro) {return $pro['item_brand'];}, $product_suffle);
-  $unique = array_unique($brand);
+  $category = array_map(function ($pro) {return $pro['category_id'];}, $product_suffle);
+  $unique = array_unique($category);
   sort($unique);
   shuffle($product_suffle);
 
@@ -27,9 +27,9 @@
       <button class="btn is-checked" data-filter="*">All Brand</button>
 
       <?php
-      array_map(function ($brand) {
+      array_map(function ($category) {
 
-        printf('<button class="btn" data-filter=".%s">%s</button>', $brand, $brand);
+        printf('<button class="btn" data-filter=".%s">%s</button>', $category, $category);
       }, $unique)
       ?>
     </div>
@@ -37,7 +37,7 @@
     <div class="grid">
 
       <?php array_map(function ($item) use ($in_cart) { ?>
-        <div class="grid-item border <?php echo $item['item_brand']; ?>">
+        <div class="grid-item border <?php echo $item['category_id']; ?>">
           <div class="item py-2" style="width: 200px;">
             <div class="product font-rale">
               <a href="<?php printf('%s?item_id=%s', 'product.php', $item['item_id']) ?>"><img src="<?php echo $item['item_image']; ?>" alt="product1" class="img-fluid"></a>

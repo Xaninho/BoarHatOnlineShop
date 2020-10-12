@@ -1,14 +1,6 @@
   <!-- TOP HEADER -->
   <header id="header">
 
-    <div class="strip d-flex justify-content-between px-4 py-1 bg-light">
-      <p class="font-rale font-size-20 text-black-50 m-0">Some random font and local</p>
-      <div class="font-rale font-size-14">
-        <a href="#" class="px-3 border-right border-left text-dark">Login</a>
-        <a href="#" class="px-3 border-right text-dark">Wishlist(0)</a>
-      </div>
-    </div>
-
   </header>
 
   <!-- NAVBAR -->
@@ -26,19 +18,13 @@
           <a class="nav-link" href="#">On Sale</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Category</a>
+          <a class="nav-link" href="#">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Products <i class="fas fa-chevron-down"></i></a>
+          <a class="nav-link" href="#">Category <i class="fas fa-chevron-down"></i></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Category</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Coming Soon</a>
         </li>
       </ul>
 

@@ -31,7 +31,7 @@
                             </div>
                             <div class="col-sm-8">
                                 <h5 class="font-baloo font-size-20"><?php echo $item['item_name']; ?></h5>
-                                <small>by <?php echo $item['item_brand']; ?></small>
+                                <small>by <?php echo $item['category_id']; ?></small>
 
                                 <div class="d-flex">
                                     <div class="rating text-warning font-size-12">

@@ -12,7 +12,7 @@ class Product
     }
 
     // fetch product data
-    public function getData($table = 'product'){
+    public function getData($table = 'dish'){
         $result = $this->db->con->query("SELECT * FROM {$table}");
 
         $resultArray = array();
@@ -26,7 +26,7 @@ class Product
     }
 
     // get product using item id
-    public function getProduct($item_id = null, $table='product'){
+    public function getProduct($item_id = null, $table='dish'){
         if (isset($item_id)){
         $result = $this->db->con->query("SELECT * FROM {$table} WHERE item_id = {$item_id}");
         }
