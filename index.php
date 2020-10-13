@@ -32,7 +32,7 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 
   <?php
-    require ('./functions.php');
+    require ('./database/functions.php');
   ?>
 
 </head>

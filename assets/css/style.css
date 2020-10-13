@@ -64,6 +64,10 @@ button, button:focus {
   background-color: #663300;
 }
 
+.bg-wood-dark {
+  background-color: #522901;
+}
+
 /* Top Sale Template */
 #top-sale .owl-carousel .item .product a {
   overflow: hidden;

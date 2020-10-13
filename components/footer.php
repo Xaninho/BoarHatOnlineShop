@@ -1,5 +1,5 @@
 <!-- FOOTER -->
-<footer id="footer" class="bg-wood text-white py-5">
+<footer id="footer" class="bg-wood-dark text-white py-5">
 
 <div class="container">
   <div class="row">
@@ -47,6 +47,6 @@
 </footer>
 
 <!-- Copyright Text -->
-<div class="copyright text-center bg-wood text-white py-2">
+<div class="copyright text-center bg-wood-dark text-white py-2">
 <p class="font-rale font-size-14">&copy; Copyrights 2020. Designed with love by <a href="https://github.com/Xaninho" class="color-second">Xaninho 💜</a></p>
 </div>
