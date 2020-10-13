@@ -41,4 +41,25 @@ class Product
         return $resultArray;
     }
 
+    public function getCategoryById($category_id = null){
+        
+        if (isset($category_id)){
+            $result = $this->db->con->query("SELECT category_name FROM category WHERE category_id = {$category_id}");
+        }
+
+        $categoryName = mysqli_fetch_assoc($result);
+        return $categoryName['category_name'];
+    }
+
+    public function getCategoryByItemId($item_id = null){
+        
+        if (isset($item_id)){
+            $result = $this->db->con->query("SELECT category_id FROM dish WHERE item_id = {$item_id}");
+        }
+
+        $categoryId = mysqli_fetch_assoc($result);
+        return $categoryId['category_id'];
+    }
+
+
 }

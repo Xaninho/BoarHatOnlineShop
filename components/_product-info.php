@@ -2,12 +2,6 @@
 
 <?php
 
-   /* if(isset($_GET['item_id']) && !empty($_GET[''])){
-        echo "App = ".$_GET['app'];
-    } else {
-        echo "App is empty";
-    }*/
-
     $item_id = $_GET['item_id'];
 
     foreach($product->getData() as $item) :
@@ -26,10 +20,10 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 text-center">
             <img src="<?php echo $item['item_image']; ?>" alt="product" class="img-fluid">
-            <div class="form-row pt-4 font-size-16 font-baloo">
-                <form method="post">
+            <div class="form-row pt-4 font-size-16 font-baloo d-flex justify-content-center">
+                <form method="post" class="btn-group ">
                     <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
                     <input type="hidden" name="user_id" value="<?php echo 1; ?>">
                     <div class="col">
@@ -47,125 +41,24 @@
                 </form>
             </div>
         </div>
+
         <div class="col-sm-6 py-5">
             <h5 class="font-baloo font-size-20"><?php echo $item['item_name']; ?></h5>
-            <small>by <?php echo $item['item_brand']; ?></small>
-            <div class="d-flex">
-                <div class="rating text-warning font-size-12">
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="far fa-star"></i></span>
-                </div>
-                <a href="#" class="px-2 font-rale font-size-14">20,534 ratings | 1000+ answered
-                    questions</a>
-            </div>
+            <small><?php echo $product->getCategoryById($item['category_id']); ?></small>
             <hr class="m-0">
 
             <!--- Product price -->
             <table class="my-3">
                 <tr class="font-rale font-size-14">
-                    <td>M.R.P:</td>
-                    <td><strike>$162.00</strike></td>
-                </tr>
-                <tr class="font-rale font-size-14">
-                    <td>Deal Price:</td>
+                    <td>Price:</td>
                     <td class="font-size-20 text-danger">$<span><?php echo $item['item_price']?></span><small
                             class="text-dark font-size-12">&nbsp;&nbsp;Inclusive of all taxes</small></td>
                 </tr>
-                <tr class="font-rale font-size-14">
-                    <td>You Save:</td>
-                    <td><span class="font-size-16 text-danger">$152.00</span></td>
-                </tr>
             </table>
-
-            <!-- Policy -->
-            <div id="policy">
-                <div class="d-flex">
-                    <div class="return text-center mr-5">
-                        <div class="font-size-20 my-2 color-second">
-                            <span class="fas fa-retweet border p-3 rounded-pill"></span>
-                        </div>
-                        <a href="#" class="font-rale font-size-12">10 Days <br> Replacement</a>
-                    </div>
-                    <div class="return text-center mr-5">
-                        <div class="font-size-20 my-2 color-second">
-                            <span class="fas fa-truck  border p-3 rounded-pill"></span>
-                        </div>
-                        <a href="#" class="font-rale font-size-12">Daily Tuition <br>Deliverd</a>
-                    </div>
-                    <div class="return text-center mr-5">
-                        <div class="font-size-20 my-2 color-second">
-                            <span class="fas fa-check-double border p-3 rounded-pill"></span>
-                        </div>
-                        <a href="#" class="font-rale font-size-12">1 Year <br>Warranty</a>
-                    </div>
-                </div>
-            </div>
-            <hr>
-
-            <!-- Order Details -->
-            <div id="order-details" class="font-rale d-flex flex-column text-dark">
-                <small>Delivery by : Mar 29 - Apr 1</small>
-                <small>Sold by <a href="#">Daily Electronics </a>(4.5 out of 5 | 18,198 ratings)</small>
-                <small><i class="fas fa-map-marker-alt color-primary"></i>&nbsp;&nbsp;Deliver to Customer -
-                    424201</small>
-            </div>
-
-            <div class="row">
-
-                <!-- Color -->
-                <div class="col-6">
-                    <div class="color my-3">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-baloo">Color:</h6>
-                            <div class="p-2 color-yellow-bg rounded-circle"><button
-                                    class="btn font-size-14"></button></div>
-                            <div class="p-2 color-primary-bg rounded-circle"><button
-                                    class="btn font-size-14"></button></div>
-                            <div class="p-2 color-second-bg rounded-circle"><button
-                                    class="btn font-size-14"></button></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Qty Section -->
-                <div class="col-6">
-                    <div class="qty d-flex">
-                        <h6 class="font-baloo">Qty</h6>
-                        <div class="px-4 d-flex font-rale">
-                            <button class="qty-up border bg-light" data-id="pro1"><i
-                                    class="fas fa-angle-up"></i></button>
-                            <input type="text" data-id="pro1" class="qty_input border px-2 w-50 bg-light"
-                                disabled value="1" placeholder="1">
-                            <button data-id="pro1" class="qty-down border bg-light"><i
-                                    class="fas fa-angle-down"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <br>
 
             <!-- Size -->
             <div class="size my-3">
-                <h6 class="font-baloo">Size :</h6>
-                <div class="d-flex justify-content-between w-75">
-                    <div class="font-rubik border p-2">
-                        <button class="btn p-0 font-size-14">4GB RAM</button>
-                    </div>
-                    <div class="font-rubik border p-2">
-                        <button class="btn p-0 font-size-14">6GB RAM</button>
-                    </div>
-                    <div class="font-rubik border p-2">
-                        <button class="btn p-0 font-size-14">8GB RAM</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Description -->
-        <div class="col-12">
             <h6 class="font-rubik">Product Description</h6>
             <hr>
             <p class="font-rale font-size-14">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -178,6 +71,8 @@
                 delectus officia ducimus dolorum sed corrupti. Sapiente optio sunt provident, accusantium
                 eligendi eius reiciendis animi? Laboriosam, optio qui? Numquam, quo fuga. Maiores minus,
                 accusantium velit numquam a aliquam vitae vel?</p>
+            </div>
+
         </div>
 
     </div>

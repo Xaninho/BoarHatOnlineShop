@@ -20,8 +20,10 @@
                     <div class="col-sm-9">
                         <?php
                             foreach($product->getData('cart') as $item) :
+                            $categoryid = $product->getCategoryByItemId($item['item_id']);
+                            $category = $product->getCategoryById($categoryid);
                             $cart = $product->getProduct($item['item_id']);
-                            $subTotal[] = array_map(function ($item){
+                            $subTotal[] = array_map(function ($item) use ($category){
                         ?>
                         <!-- Cart item -->
                         <div class="row border-top py-3 mt-3">
@@ -31,20 +33,7 @@
                             </div>
                             <div class="col-sm-8">
                                 <h5 class="font-baloo font-size-20"><?php echo $item['item_name']; ?></h5>
-                                <small>by <?php echo $item['category_id']; ?></small>
-
-                                <div class="d-flex">
-                                    <div class="rating text-warning font-size-12">
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="far fa-star"></i></span>
-                                    </div>
-                                    <a href="#" class="px-2 font-rale font-size-14">20,534 ratings</a>
-                                </div>
-
-                                
+                                <small><?php echo $category; ?></small>
 
                                 <div class="qty d-flex pt-2">
                                     <div class="d-flex font-rale w-25">

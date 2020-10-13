@@ -1,20 +1,19 @@
 <!-- FOOTER -->
-<footer id="footer" class="bg-dark text-white py-5">
+<footer id="footer" class="bg-wood text-white py-5">
 
 <div class="container">
   <div class="row">
 
     <div class="col-lg-3 col-12">
-      <h4 class="font-rubik font-size-20">Mobile Shopee</h4>
-      <p class="font-size-14 font-rale text-white-50">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Repellendus, deserunt.</p>
+      <h4 class="font-rubik font-size-20">The Boar Hat</h4>
+      <p class="font-size-14 font-rale text-white-50">Home of fantastic dishes & main reseller of Vanya Ale!</p>
     </div>
 
     <div class="col-lg-4 col-12">
-      <h4 class="font-rubik font-size-20">Newslatter</h4>
+      <h4 class="font-rubik font-size-20">Newsletter</h4>
       <form class="form-row">
         <div class="col">
-          <input type="text" class="form-control" placeholder="Email *">
+          <input type="text" class="form-control" placeholder="Insert your email *">
         </div>
         <div class="col">
           <button type="submit" class="btn btn-primary mb-2">Subscribe</button>
@@ -48,7 +47,6 @@
 </footer>
 
 <!-- Copyright Text -->
-<div class="copyright text-center bg-dark text-white py-2">
-<p class="font-rale font-size-14">&copy; Copyrights 2020. Desing By <a href="#" class="color-second">Daily
-    Tuition</a></p>
+<div class="copyright text-center bg-wood text-white py-2">
+<p class="font-rale font-size-14">&copy; Copyrights 2020. Designed with love by <a href="https://github.com/Xaninho" class="color-second">Xaninho 💜</a></p>
 </div>

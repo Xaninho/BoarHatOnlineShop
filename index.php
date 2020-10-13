@@ -11,6 +11,8 @@
   <meta name="viewport" content="width=device=width, initial-scale=1.0">
   <title>Boar Hat</title>
 
+  <link rel="icon" type="image/png" sizes="32x32" href="./boarhat.png">
+
   <!-- Bootstrap CDN -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -51,8 +53,6 @@
    include ('./components/_top-sale.php');
 
    include ('./components/_special-price.php');
-
-   include ('./components/_banner-ads.php');
 
    include ('./components/_new-phones.php');
 
