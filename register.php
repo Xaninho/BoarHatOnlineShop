@@ -36,6 +36,12 @@
     include('./components/header.php');
     ?>
 
+    <?php
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            require ('register-process.php');
+        }
+    ?>
+
   <!-- MAIN CONTENT -->
   <main>
 
@@ -64,16 +70,16 @@
                     <form action="register.php" method="post" enctype="multipart/form-data" id="reg-form">
                         <div class="form-row">
                             <div class="col">
-                                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name">
+                                <input type="text" value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName']; ?>" name="firstName" id="firstName" class="form-control" placeholder="First Name">
                             </div>
                             <div class="col">
-                                <input type="text" name="LastName" id="LastName" class="form-control" placeholder="Last Name">
+                                <input type="text" value="<?php if(isset($_POST['LastName'])) echo $_POST['LastName']; ?>" name="LastName" id="LastName" class="form-control" placeholder="Last Name">
                             </div>
                         </div>
 
                         <div class="form-row my-4">
                             <div class="col">
-                                <input type="email" required name="email" id="email" class="form-control" placeholder="Email*">
+                                <input type="email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" required name="email" id="email" class="form-control" placeholder="Email*">
                             </div>
                         </div>
 
