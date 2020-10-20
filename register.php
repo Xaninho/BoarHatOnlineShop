@@ -26,7 +26,13 @@
 
   <?php
     require ('./database/functions.php');
+    
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            require ('register-process.php');
+        }
+    
   ?>
+  
 
 </head>
 
@@ -34,12 +40,6 @@
 
     <?php
     include('./components/header.php');
-    ?>
-
-    <?php
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            require ('register-process.php');
-        }
     ?>
 
   <!-- MAIN CONTENT -->

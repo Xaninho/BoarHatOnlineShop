@@ -23,6 +23,9 @@ CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `profile_image` varchar(100),
   `register_date` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -121,8 +124,8 @@ INSERT INTO `dish` (`item_id`, `category_id`, `item_name`, `item_price`, `item_i
 (44, 2, 'Seafood Pasta', 15.99, './assets/images/dishes/seafood_pasta.png', '2020-10-09 14:31:17'),
 (45, 2, 'Seafood Pot', 15.99, './assets/images/dishes/seafood_pot.png', '2020-10-09 14:31:17');
 
-INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `register_date`) VALUES
-(1, 'Meliodas', 'Sama', '2020-10-09 14:31:17'),
-(2, 'Escanor', 'The One', '2020-10-09 14:31:17');
+INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `email`, `password`, `profile_image`, `register_date`) VALUES
+(1, 'Meliodas', 'Sama', 'email@email.com', '123456789', 'profileImg', '2020-10-09 14:31:17'),
+(2, 'Escanor', 'The One', 'email@email.com', '123456789', 'profileImg', '2020-10-09 14:31:17');
 
 COMMIT;
