@@ -1,6 +1,5 @@
 <?php
 
-require ('helper.php');
 $error = array();
 
 $email = validate_input_email($_POST['email']);

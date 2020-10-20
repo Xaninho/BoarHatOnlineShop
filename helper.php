@@ -44,3 +44,21 @@ function upload_profile($path, $file){
     // return default image
     return $path . $default;
 }
+
+// get user info
+function get_user_info($con, $user_id){
+    $query = "SELECT first_name, last_name, email, profile_image FROM user WHERE user_id=?";
+    $q = mysqli_stmt_init($con);
+
+    mysqli_stmt_prepare($q, $query);
+
+    // bind the statement
+    mysqli_stmt_bind_param($q, 'i', $user_id);
+
+    // execute sql statement
+    mysqli_stmt_execute($q);
+    $result = mysqli_stmt_get_result($q);
+
+    $row = mysqli_fetch_array($result);
+    return empty($row) ? false : $row;
+}

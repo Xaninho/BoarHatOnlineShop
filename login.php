@@ -26,9 +26,18 @@
 
   <?php
     require ('./database/functions.php');
+    require ('helper.php');
+
+    session_start();
+
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         require ('login-process.php');
     }
+
+    if(isset($_SESSION['user_id'])){
+      $user = get_user_info($db->con, $_SESSION['user_id']);
+    }
+
   ?>
   
 
@@ -55,7 +64,7 @@
                 </div>
                 <div class="upload-profile-image d-flex justify-content-center pb-5">
                     <div class="text-center">
-                    <img src="./assets/images/profile/knight.png" style="width: 200px; height: 200px" class="img rounded-circle" alt="profile">
+                    <img src="<?php echo isset($user['profile_image']) ? $user['profile_image'] : './assets/images/profile/knight.png' ; ?>" style="width: 200px; height: 200px" class="img rounded-circle" alt="profile">
                     </div>
                 </div>
                 <div class="d-flex justify-content-center">
