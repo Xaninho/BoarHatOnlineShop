@@ -47,7 +47,7 @@ function upload_profile($path, $file){
 
 // get user info
 function get_user_info($con, $user_id){
-    $query = "SELECT first_name, last_name, email, profile_image FROM user WHERE user_id=?";
+    $query = "SELECT first_name, last_name, email, profile_image, role FROM user WHERE user_id=?";
     $q = mysqli_stmt_init($con);
 
     mysqli_stmt_prepare($q, $query);

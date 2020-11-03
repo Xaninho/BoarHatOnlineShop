@@ -32,6 +32,14 @@
 
     if(isset($_SESSION['user_id'])){
       $user = get_user_info($db->con, $_SESSION['user_id']);
+    } else{
+      header("location:login.php");
+      exit();
+    }
+
+    if ($user['role'] == 'Client'){
+      header("location:login.php");
+      exit();
     }
 
   ?>
