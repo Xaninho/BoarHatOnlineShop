@@ -24,6 +24,9 @@
   <!-- Custom CSS file -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <?php
     require ('./database/functions.php');
     require ('helper.php');
@@ -39,8 +42,6 @@
       exit();
     }
 
-  
-
   ?>
   
 
@@ -55,6 +56,7 @@
   <!-- MAIN CONTENT -->
   <main>
 
+  <!-- User Info -->
     <section id="main-site">
         <div class="container py-5">
             <div class="row">
@@ -89,6 +91,62 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Database Info -->
+    <section>
+      <div class="wrapper">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="page-header clearfix">
+                          <h2 class="pull-left">Dish Details</h2>
+                          <a href="404.php" class="btn btn-success pull-right">Add New Dish</a>
+                      </div>
+                      <?php
+                      
+                      // Attempt select query execution
+
+                      $items= $product->getData();
+                      
+                          if(isset($items)){
+                              echo "<table class='table table-bordered table-striped'>";
+                                  echo "<thead>";
+                                      echo "<tr>";
+                                          echo "<th>Image</th>";
+                                          echo "<th>Name</th>";
+                                          echo "<th>Category</th>";
+                                          echo "<th>Price</th>";
+                                      echo "</tr>";
+                                  echo "</thead>";
+                                  echo "<tbody>";
+
+                                  foreach ($items as $row){
+                                    echo "<tr>";
+                                          echo "<td> <img src=" . $row['item_image'] . "> </td>";
+                                          echo "<td>" . $row['item_name'] . "</td>";
+                                          echo "<td>" . $product->getCategoryById($row['category_id']) . " </td>";
+                                          echo "<td>" . $row['item_price'] . "</td>";
+                                          echo "<td>";
+                                              echo "<a href='read.php?id=". $row['item_id'] ."' title='View Record' data-toggle='tooltip'><i class='material-icons md-dark'>article</i></a>";
+                                              echo "<a href='update.php?id=". $row['item_id'] ."' title='Update Record' data-toggle='tooltip'><i class='material-icons md-dark'>create</i></a>";
+                                              echo "<a href='delete.php?id=". $row['item_id'] ."' title='Delete Record' data-toggle='tooltip'><i class='material-icons md-dark'>delete</i></a>";
+                                          echo "</td>";
+                                      echo "</tr>";
+                                  }
+                                  echo "</tbody>";                            
+                              echo "</table>";
+                          } else{
+                              echo "<p class='lead'><em>No records were found.</em></p>";
+                          }
+  
+                      // Close connection
+                      //mysqli_close($link);
+                      ?>
+                  </div>
+              </div>        
+          </div>
+      </div>
     </section>
 
   </main>
