@@ -14,7 +14,7 @@ if (empty($password)){
 
 if(empty($error)){
     // sql query
-    $query = "SELECT user_id, first_name, last_name, email, password, profile_image FROM user WHERE email=?";
+    $query = "SELECT user_id, first_name, last_name, email, password, profile_image, role FROM user WHERE email=?";
     $q = mysqli_stmt_init($db->con);
     mysqli_stmt_prepare($q, $query);
 
@@ -30,10 +30,15 @@ if(empty($error)){
     if (!empty($row)){
         // verify password
         if(password_verify($password, $row['password'])){
-
             $_SESSION['user_id'] = $row['user_id'];
-            header("location: dashboard.php");
-            exit();
+
+            if ($row['role'] == 'Administrator'){
+                header("location: dashboard-admin.php");
+                exit();
+            } else {
+                header("location: dashboard.php");
+                exit();
+            }
 
         } else{
             print "Incorrect Password!";

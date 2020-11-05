@@ -37,8 +37,8 @@ if(empty($error)){
     $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
 
     // make a query
-    $query = "INSERT INTO user (user_id, first_name, last_name, email, password, profile_image, register_date )";
-    $query .= "VALUES(' ', ?, ?, ?, ?, ?, NOW())";
+    $query = "INSERT INTO user (user_id, first_name, last_name, email, password, profile_image, role, register_date )";
+    $query .= "VALUES(' ', ?, ?, ?, ?, ?, 'Client', NOW())";
 
     // initialize a statement
     $q = mysqli_stmt_init($db->con);
@@ -58,10 +58,9 @@ if(empty($error)){
         session_start();
 
         $_SESSION['user_id'] = mysqli_insert_id($db->con);
-
-
        header("location:login.php");
        exit();
+       
     }else{
         print "Error while registration...!";
         echo mysqli_stmt_error($q);
