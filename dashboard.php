@@ -32,6 +32,9 @@
 
     if(isset($_SESSION['user_id'])){
       $user = get_user_info($db->con, $_SESSION['user_id']);
+      print 'success';
+    } else {
+      print 'fail';
     }
 
   ?>
@@ -73,6 +76,12 @@
                         </ul>
                     </div>
 
+                    <form action="logout.php">
+                      <div class="submit-btn text-center my-5">
+                              <button type="submit" class="btn btn-warning rounded-pill text-white px-5" style="background-color: #663300; border-color: #663300;">Logout</button>
+                      </div>
+                    </form>
+                    
                 </div>
             </div>
         </div>

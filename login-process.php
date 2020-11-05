@@ -30,8 +30,13 @@ if(empty($error)){
     if (!empty($row)){
         // verify password
         if(password_verify($password, $row['password'])){
+
+            $_SESSION['user_id'] = $row['user_id'];
             header("location: dashboard.php");
             exit();
+
+        } else{
+            print "Incorrect Password!";
         }
     }else{
         print "You are not a member please register!";
