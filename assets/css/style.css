@@ -10,7 +10,7 @@
     font: normal 500 16px var(--font-ubuntu);
 }
 
-#register, #login-form {
+#register, #login-form, #create {
     padding: 5% 0;
     background: url("../../assets/images/background-tavern.jpg") no-repeat;
     background-size: cover;
@@ -38,6 +38,18 @@
 
 #register .upload-profile-image:hover{
     filter: drop-shadow(1px 1px 22px #663300);
+}
+
+#create .upload-profile-image{
+  position: relative;
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: filter .8s ease;
+}
+
+#create .upload-profile-image:hover{
+  filter: drop-shadow(1px 1px 22px #663300);
 }
 
 #upload-profile{

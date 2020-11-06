@@ -24,9 +24,6 @@
   <!-- Custom CSS file -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-  <!-- Google Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
   <?php
     require ('./database/functions.php');
     require ('helper.php');
@@ -101,7 +98,7 @@
                   <div class="col-md-12">
                       <div class="page-header clearfix">
                           <h2 class="pull-left">Dish Details</h2>
-                          <a href="404.php" class="btn btn-success pull-right">Add New Dish</a>
+                          <a href="create.php" class="btn btn-success pull-right">Add New Dish</a>
                       </div>
                       <?php
                       
@@ -128,9 +125,9 @@
                                           echo "<td>" . $product->getCategoryById($row['category_id']) . " </td>";
                                           echo "<td>" . $row['item_price'] . "</td>";
                                           echo "<td>";
-                                              echo "<a href='read.php?id=". $row['item_id'] ."' title='View Record' data-toggle='tooltip'><i class='material-icons md-dark'>article</i></a>";
-                                              echo "<a href='update.php?id=". $row['item_id'] ."' title='Update Record' data-toggle='tooltip'><i class='material-icons md-dark'>create</i></a>";
-                                              echo "<a href='delete.php?id=". $row['item_id'] ."' title='Delete Record' data-toggle='tooltip'><i class='material-icons md-dark'>delete</i></a>";
+                                              echo "<a href='read.php?id=". $row['item_id'] ."' title='View Record' data-toggle='tooltip'><i class='fas fa-file'></i></a>";
+                                              echo "<a href='update.php?id=". $row['item_id'] ."' title='Update Record' data-toggle='tooltip'><i class='fas fa-edit'></i></a>";
+                                              echo "<a href='delete.php?id=". $row['item_id'] ."' title='Delete Record' data-toggle='tooltip'><i class='fas fa-trash'></i></a>";
                                           echo "</td>";
                                       echo "</tr>";
                                   }
