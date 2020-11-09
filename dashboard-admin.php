@@ -125,9 +125,7 @@
                                           echo "<td>" . $product->getCategoryById($row['category_id']) . " </td>";
                                           echo "<td>" . $row['item_price'] . "</td>";
                                           echo "<td>";
-                                              echo "<a href='read.php?id=". $row['item_id'] ."' title='View Record' data-toggle='tooltip'><i class='fas fa-file'></i></a>";
-                                              echo "<a href='update.php?id=". $row['item_id'] ."' title='Update Record' data-toggle='tooltip'><i class='fas fa-edit'></i></a>";
-                                              echo "<a href='delete.php?id=". $row['item_id'] ."' title='Delete Record' data-toggle='tooltip'><i class='fas fa-trash'></i></a>";
+                                              echo "<a href='edit.php?id=". $row['item_id'] ."' title='Edit Record' data-toggle='tooltip'><i class='fas fa-edit'></i></a>";
                                           echo "</td>";
                                       echo "</tr>";
                                   }
