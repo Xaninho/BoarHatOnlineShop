@@ -21,7 +21,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6 text-center">
-            <img src="<?php echo $item['item_image']; ?>" alt="product" class="img-fluid">
+            <img src="<?php echo $item['item_image_url']; ?>" alt="product" class="img-fluid">
             <div class="form-row pt-4 font-size-16 font-baloo d-flex justify-content-center">
                 <form method="post" class="btn-group ">
                     <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">

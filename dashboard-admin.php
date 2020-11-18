@@ -120,7 +120,7 @@
 
                                   foreach ($items as $row){
                                     echo "<tr>";
-                                          echo "<td> <img src=" . $row['item_image'] . "> </td>";
+                                          echo "<td> <img src=" . $row['item_image_url'] . "> </td>";
                                           echo "<td>" . $row['item_name'] . "</td>";
                                           echo "<td>" . $product->getCategoryById($row['category_id']) . " </td>";
                                           echo "<td>" . $row['item_price'] . "</td>";
@@ -135,8 +135,6 @@
                               echo "<p class='lead'><em>No records were found.</em></p>";
                           }
   
-                      // Close connection
-                      //mysqli_close($link);
                       ?>
                   </div>
               </div>        

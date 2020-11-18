@@ -24,7 +24,7 @@
 
          <div class="item py-2">
            <div class="product font-rale">
-             <a href="<?php printf('%s?item_id=%s', 'product.php', $item['item_id']) ?>"><img src="<?php echo $item['item_image']; ?>" alt="product1" class="img-fluid mx-auto" style="width: 60%;"></a>
+             <a href="<?php printf('%s?item_id=%s', 'product.php', $item['item_id']) ?>"><img src="<?php echo $item['item_image_url']; ?>" alt="product1" class="img-fluid mx-auto" style="width: 60%;"></a>
              <div class="text-center">
                <h6><?php echo $item['item_name']; ?></h6>
                <div class="price py-2">
