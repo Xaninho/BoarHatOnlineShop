@@ -126,6 +126,7 @@
                                           echo "<td>" . $row['item_price'] . "</td>";
                                           echo "<td>";
                                               echo "<a href='edit.php?id=". $row['item_id'] ."' title='Edit Record' data-toggle='tooltip'><i class='fas fa-edit'></i></a>";
+                                              echo "<a href='delete.php?id=". $row['item_id'] ."' title='Delete Record' data-toggle='tooltip'><i class='fas fa-trash'></i></a>";
                                           echo "</td>";
                                       echo "</tr>";
                                   }
