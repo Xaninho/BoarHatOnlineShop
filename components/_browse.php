@@ -1,19 +1,21 @@
 <!-- SPECIAL PRICE -->
 <?php
-  $category = array_map(function ($pro) {return $pro['category_id'];}, $product_suffle);
-  $unique = array_unique($category);
-  sort($unique);
-  shuffle($product_suffle);
+$category = array_map(function ($pro) {
+  return $pro['category_id'];
+}, $product_suffle);
+$unique = array_unique($category);
+sort($unique);
+shuffle($product_suffle);
 
-  // request method post
-  if($_SERVER['REQUEST_METHOD'] == "POST"){
-    if (isset($_POST['special_sale_submit'])){
-        // call method addToCart
-        $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
-    }
+// request method post
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+  if (isset($_POST['special_sale_submit'])) {
+    // call method addToCart
+    $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
   }
+}
 
-  $in_cart =  $Cart->getCartId($product->getData('cart'));
+$in_cart =  $Cart->getCartId($product->getData('cart'));
 
 ?>
 
@@ -27,7 +29,7 @@
       <button class="btn is-checked" data-filter="*">All Dishes</button>
 
       <?php
-      foreach ($unique as $x){
+      foreach ($unique as $x) {
         printf('<button class="btn" data-filter=".%s">%s</button>', $x, $product->getCategoryById($x));
       }
       ?>
@@ -49,7 +51,7 @@
                   <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
                   <input type="hidden" name="user_id" value="<?php echo 1; ?>">
                   <?php
-                  if (in_array($item['item_id'], $in_cart ?? [] )) {
+                  if (in_array($item['item_id'], $in_cart ?? [])) {
                     echo '<button type="submit" disabled class="btn btn-success font-size-12">In the Cart</button>';
                   } else {
                     echo '<button type="submit" name="top_sale_submit" class="btn btn-warning font-size-12">Add to Cart</button>';

@@ -13,10 +13,7 @@
                         <p class="font-baloo font-size-16 text-black-50">Empty Wishlist</p>
                     </div>
                 </div>
-                <!-- .Empty Cart -->
             </div>
         </div>
-        <!--  !shopping cart items   -->
     </div>
 </section>
-<!-- !Shopping cart section  -->

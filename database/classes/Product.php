@@ -12,13 +12,14 @@ class Product
     }
 
     // fetch product data
-    public function getData($table = 'dish'){
+    public function getData($table = 'dish')
+    {
         $result = $this->db->con->query("SELECT * FROM {$table}");
 
         $resultArray = array();
 
         // fetch product data one by one
-        while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+        while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             $resultArray[] = $item;
         }
 
@@ -26,24 +27,26 @@ class Product
     }
 
     // get product using item id
-    public function getProduct($item_id = null, $table='dish'){
-        if (isset($item_id)){
-        $result = $this->db->con->query("SELECT * FROM {$table} WHERE item_id = {$item_id}");
+    public function getProduct($item_id = null, $table = 'dish')
+    {
+        if (isset($item_id)) {
+            $result = $this->db->con->query("SELECT * FROM {$table} WHERE item_id = {$item_id}");
         }
 
         $resultArray = array();
 
         // fetch product data one by one
-        while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+        while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             $resultArray[] = $item;
         }
 
         return $resultArray;
     }
 
-    public function getCategoryById($category_id = null){
-        
-        if (isset($category_id)){
+    public function getCategoryById($category_id = null)
+    {
+
+        if (isset($category_id)) {
             $result = $this->db->con->query("SELECT category_name FROM category WHERE category_id = {$category_id}");
         }
 
@@ -51,15 +54,14 @@ class Product
         return $categoryName['category_name'];
     }
 
-    public function getCategoryByItemId($item_id = null){
-        
-        if (isset($item_id)){
+    public function getCategoryByItemId($item_id = null)
+    {
+
+        if (isset($item_id)) {
             $result = $this->db->con->query("SELECT category_id FROM dish WHERE item_id = {$item_id}");
         }
 
         $categoryId = mysqli_fetch_assoc($result);
         return $categoryId['category_id'];
     }
-
-
 }
