@@ -21,7 +21,7 @@ $in_cart =  $Cart->getCartId($product->getData('cart'));
 
 
 
-<section id="special-price">
+<section id="browse">
 
   <div class="container">
     <h4 class="font-rubik font-size-20">Browse</h4>

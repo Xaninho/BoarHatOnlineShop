@@ -1,13 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&family=Raleway&family=Rubik&display=swap");
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;500;600;700;900&display=swap');
 
 :root{
     --font-ubuntu: 'Ubuntu', monospace;
     --color-border: #e5e5e5;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 .font-ubuntu{
     font: normal 500 16px var(--font-ubuntu);
+}
+
+.owl-carousel .textoverlay{
+  position:absolute;
+  color:#FFF;
+  font-size:20px;
+  display:block;
 }
 
 #register, #login-form, #create {
@@ -17,11 +29,40 @@
     background-position: center;
 }
 
+#header .navbar-brand {
+  font-family: 'Cinzel Decorative';
+  font-weight: 700;
+  font-size: 25px;
+}
+
+#header .navbarNav {
+  font-family: 'Cinzel Decorative';
+}
+
 #not-found {
     padding: 5% 0;
     background: url("../../assets/images/map.jpg") no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+.text-border{
+  font-weight: 600;
+  -webkit-text-stroke: 1px #663300;
+  text-shadow: 2px 2px #663300;
+}
+
+.btn-outline-light{
+  border-color:white;
+  color:white;
+  font-size:20px;
+}
+
+.btn-outline-light:hover{
+  color: #663300;
+  background-color: white;
+  border-color: white;
+  font-size:20px;
 }
 
 #login-form{
@@ -107,6 +148,15 @@
     box-shadow: none;
 }
 
+main {
+  background-attachment: fixed;
+  background: url(../../assets/images/food-pattern.png);
+  background-size: 90%;
+  background-color: hsla(0,0%,100%,0.90);
+  background-blend-mode: overlay;
+  background-repeat: repeat;
+}
+
 /*     SASS Template     */
 /*global classes*/
 button, button:focus {
@@ -125,6 +175,10 @@ button, button:focus {
 
 .font-rubik {
   font-family: "Rubik", cursive;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel Decorative';
 }
 
 .font-size-12 {
@@ -176,6 +230,13 @@ button, button:focus {
   background-color: #522901;
 }
 
+#banner-area .owl-carousel .owl-item{
+  height:500px;
+  width:100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Top Sale Template */
 #top-sale .owl-carousel .item .product a {
   overflow: hidden;
@@ -211,7 +272,7 @@ button, button:focus {
 }
 
 /*   Special Price Section Template */
-#special-price .grid .grid-item {
+#browse .grid .grid-item {
   margin-right: 1.2rem;
   margin-top: 1rem;
 }

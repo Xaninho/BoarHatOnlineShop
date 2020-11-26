@@ -10,7 +10,7 @@
     }
   }
   ?>
- <section id="new-phones" style="margin-top: 5%;">
+ <section id="new-dishes" style="margin-top: 5%;">
    <div class="container">
      <h4 class="font-rubik font-size-20">Recent Dishes</h4>
      <hr>

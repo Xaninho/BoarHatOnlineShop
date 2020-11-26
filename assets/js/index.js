@@ -56,7 +56,7 @@ $(document).ready(function(){
 
 
     // new phones owl carousel
-    $("#new-phones .owl-carousel").owlCarousel({
+    $("#new-dishes .owl-carousel").owlCarousel({
         loop: true,
         nav: false,
         dots: true,
